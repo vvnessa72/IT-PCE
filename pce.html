@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My To-Do</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="pce.css">
+</head>
+
+<body class="font-[Poppins] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-white/20 backdrop-blur-md text-white py-4 px-8 flex justify-between items-center shadow-lg">
+    <h1 class="text-2xl font-semibold tracking-wide">To Do List</h1>
+    <ul class="flex gap-6 text-lg items-center">
+      <li><a href="#intro" class="hover:text-yellow-300 transition">Home</a></li>
+      <li><a href="#todo" class="hover:text-yellow-300 transition">To Do List</a></li>
+      <!-- Tombol Search -->
+      <li>
+        <button id="toggle-search" class="text-xl hover:text-yellow-300 transition">🔍</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Search bar (hidden awal) -->
+  <div id="search-container" class="hidden bg-white/70 mx-auto mt-3 p-3 rounded-xl shadow-md max-w-lg flex items-center gap-3">
+    <input id="search-input" 
+           type="text" 
+           placeholder="Cari kegiatan..."
+           class="flex-1 p-2 rounded-lg border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 transition">
+    <button id="clear-search" class="text-red-500 text-xl font-bold hover:text-red-700 transition">&times;</button>
+  </div>
+
+  <!-- Intro Section -->
+  <section id="intro" class="flex-1 flex flex-col justify-center items-center text-center text-white px-4 py-16" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-md">Kelola Aktivitasmu dengan Warna!</h2>
+    <p class="text-lg md:text-xl max-w-2xl text-white/90 mb-6">
+      Buat, simpan, dan hapus daftar kegiatan harianmu dengan gaya penuh warna dan semangat baru.
+    </p>
+    <a href="#todo" class="bg-white text-purple-600 font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition">Mulai Sekarang</a>
+  </section>
+
+  <!-- To-Do Section -->
+  <section id="todo" class="bg-white text-gray-800 py-16 px-6 md:px-16 rounded-t-3xl shadow-2xl" data-aos="fade-up">
+    <h3 class="text-3xl font-semibold text-center mb-10 text-purple-600">Daftar To Do List</h3>
+
+    <!-- Form -->
+    <div class="max-w-lg mx-auto mb-10 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-6 rounded-2xl shadow-lg" data-aos="zoom-in">
+      <input id="todo-name" type="text" placeholder="Nama kegiatan..."
+             class="w-full border-2 border-purple-300 p-3 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-purple-400 transition" />
+      <textarea id="todo-desc" rows="3" placeholder="Deskripsi kegiatan..."
+             class="w-full border-2 border-purple-300 p-3 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-purple-400 transition"></textarea>
+      <button id="add-todo"
+             class="w-full bg-gradient-to-r from-blue-500 to-pink-500 text-white font-semibold py-3 rounded-lg hover:scale-105 hover:shadow-lg transition">
+        + Tambah Kegiatan
+      </button>
+    </div>
+
+    <!-- List -->
+    <div id="todo-list" class="max-w-xl mx-auto space-y-4" data-aos="fade-up"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white/20 text-white text-center py-4 mt-auto backdrop-blur-md text-sm">
+    © 2025 My To-Do
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+  <script src="pce.js"></script>
+</body>
+</html>
